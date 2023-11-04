@@ -30,6 +30,11 @@ dt::after {
     position: absolute;
     top: 8px;
     right: 16px;
+    transition: transform .3s;
+}
+
+dl>div.appear dt::after {
+    transform: rotate(45deg);
 }
 
 dd {
@@ -40,4 +45,22 @@ dd {
 
 dd::before {
     content: 'A, ';
+}
+
+dl>div.appear dd {
+    display: block;
+    animation: .3s fadeIn;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+
 }
